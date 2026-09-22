@@ -44,7 +44,7 @@ export default function DoarRecurso() {
       const token = sessao?.access_token;
 
       const resposta = await fetch(
-        `${process.env.EXPO_PUBLIC_API_URL}/operacoes/doar-recurso`,
+        `${process.env.EXPO_PUBLIC_API_URL}/api/operacoes/doar-recurso`,
         {
           method: "POST",
           headers: {

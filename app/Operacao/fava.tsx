@@ -34,7 +34,7 @@ export default function Fava() {
   async function carregarSementes() {
     try {
       const resposta = await fetch(
-        `${process.env.EXPO_PUBLIC_API_URL}/sementes`,
+        `${process.env.EXPO_PUBLIC_API_URL}/api/sementes`,
       );
       const resultado = await resposta.json();
 
@@ -92,7 +92,7 @@ export default function Fava() {
       const token = sessao?.access_token;
 
       const resposta = await fetch(
-        `${process.env.EXPO_PUBLIC_API_URL}/operacoes`,
+        `${process.env.EXPO_PUBLIC_API_URL}/api/operacoes`,
         {
           method: "POST",
           headers: {

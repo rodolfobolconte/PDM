@@ -71,7 +71,7 @@ export default function Registrar() {
       }
 
       // Envia os dados do cadastro para a API
-      const resposta = await fetch(`${enderecoAPI}/cadastro`, {
+      const resposta = await fetch(`${enderecoAPI}/api/cadastro`, {
         method: "POST",
 
         headers: {

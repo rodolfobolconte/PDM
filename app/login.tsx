@@ -26,16 +26,19 @@ export default function Login() {
     }
 
     try {
-      const resposta = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const resposta = await fetch(
+        `${process.env.EXPO_PUBLIC_API_URL}/api/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email.trim(),
+            senha: senha,
+          }),
         },
-        body: JSON.stringify({
-          email: email.trim(),
-          senha: senha,
-        }),
-      });
+      );
 
       const resultado = await resposta.json();
 

@@ -32,7 +32,7 @@ export default function SolicitarRecurso() {
   async function carregarRecursos() {
     try {
       const resposta = await fetch(
-        `${process.env.EXPO_PUBLIC_API_URL}/recursos`,
+        `${process.env.EXPO_PUBLIC_API_URL}/api/recursos`,
       );
       const resultado = await resposta.json();
 
@@ -86,7 +86,7 @@ export default function SolicitarRecurso() {
       const token = sessao?.access_token;
 
       const resposta = await fetch(
-        `${process.env.EXPO_PUBLIC_API_URL}/operacoes`,
+        `${process.env.EXPO_PUBLIC_API_URL}/api/operacoes`,
         {
           method: "POST",
           headers: {

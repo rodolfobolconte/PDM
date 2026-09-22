@@ -10,7 +10,13 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 
-import historico from "../../constants/historicoData";
+type HistoricoItem = {
+  id: string;
+  produto: string;
+  data: string;
+};
+
+const historico: HistoricoItem[] = [];
 
 export default function Historico() {
   return (
@@ -38,13 +44,19 @@ export default function Historico() {
 
       {/* Card */}
       <View style={styles.card}>
-        {historico.map((item) => (
-          <View key={item.id} style={styles.item}>
-            <Text style={styles.produto}>{item.produto}</Text>
+        {historico.length === 0 ? (
+          <Text style={{ padding: 14, color: "#666" }}>
+            Nenhum registro encontrado.
+          </Text>
+        ) : (
+          historico.map((item) => (
+            <View key={item.id} style={styles.item}>
+              <Text style={styles.produto}>{item.produto}</Text>
 
-            <Text style={styles.data}>{item.data}</Text>
-          </View>
-        ))}
+              <Text style={styles.data}>{item.data}</Text>
+            </View>
+          ))
+        )}
       </View>
     </ScrollView>
   );

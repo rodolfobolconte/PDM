@@ -47,7 +47,7 @@ export default function DoarSemente() {
       const token = sessao?.access_token;
 
       const resposta = await fetch(
-        `${process.env.EXPO_PUBLIC_API_URL}/operacoes/doar-semente`,
+        `${process.env.EXPO_PUBLIC_API_URL}/api/operacoes/doar-semente`,
         {
           method: "POST",
           headers: {

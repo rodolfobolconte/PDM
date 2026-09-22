@@ -91,16 +91,6 @@ export default function Home() {
           <Text style={styles.cardText}>Realizar operação</Text>
         </TouchableOpacity>
 
-        {/* Lista de espera */}
-        <TouchableOpacity style={styles.card}>
-          <Image
-            source={require("../../assets/images/ListaEspera.png")}
-            style={styles.icon}
-          />
-
-          <Text style={styles.cardText}>Lista de espera</Text>
-        </TouchableOpacity>
-
         {/* Histórico */}
         <TouchableOpacity
           style={styles.card}
